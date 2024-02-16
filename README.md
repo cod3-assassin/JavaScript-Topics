@@ -72,6 +72,14 @@ Welcome to JavaScript Learning with a structured approach to mastering JavaScrip
 
 9. **Function Challenge:** Engage in a challenge related to functions to solidify learning.
 
+10. **Execution Context in Action:** Explore the concept of execution context in JavaScript.
+
+11. **Call Stack Exploration:** Dive into the call stack and understand its role in JavaScript.
+
+## Content in Logic Control Flow Folder
+
+1. **If Statement Mastery:** Learn the fundamentals of conditional statements with the if statement.
+
 ## How to Use
 
 Each folder contains comprehensive explanations and code examples related to the topic. Dive into the folders to explore each topic in detail.
