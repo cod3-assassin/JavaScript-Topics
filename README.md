@@ -18,6 +18,20 @@ Welcome to JavaScript Learning with a structured approach to mastering JavaScrip
 
 7. **Type Coercion:** Understand the concept of type coercion in JavaScript.
 
+8. **Working with Strings:** Explore string manipulation and declaration in JavaScript.
+
+9. **String Challenge:** A simple challenge to uppercase the first letter of a string.
+
+10. **Working with Numbers:** Learn about number manipulation, conversion to strings, and concatenation rules.
+
+11. **Math Object:** Explore the Math object and its methods in detail.
+
+12. **Number Challenge:** Engage in a challenge related to numbers to solidify learning.
+
+13. **Date and Time Methods:** Understand date and time manipulation methods and their usage.
+
+14. **Date Object:** Learn about creating Date objects and different ways to declare and access dates, along with using the Intl API for date and time.
+
 ## Content in the Arrays and Objects Folder
 
 1. **Array Basics:** Get started with arrays in JavaScript, including declaration and memory addressing.
