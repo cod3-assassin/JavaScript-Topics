@@ -32,3 +32,4 @@ console.log(minMax([1, 2, 3, 4, 5, 6]));
     `The Area of a rectangle with alength of ${length} and a width of ${width} is ${area}`
   );
 })(5, 9);
+272018370196;
