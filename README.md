@@ -111,7 +111,7 @@ with code examples.
    with the if statement.
 2. **If Else Nesting:** Exploring the Nestign of If else statement and loops of
    the if else and more.
-3. **Swithches Exploring:** Detail view about swithes and switch cases and aslo
+3. **Switches Exploring:** Detail view about swithes and switch cases and aslo
    implementation of cases.
 
 ## How to Use
