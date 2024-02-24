@@ -78,3 +78,12 @@ const positveNum = numbers
   .reduce((acc, curr) => (acc += curr));
 
 console.log(positveNum);
+
+// Third Challenge
+
+const words = ["coder", "programmer", "devloper"];
+
+const cWords = words.map((word) => {
+  return word[0].toUpperCase() + word.slice(1, word.length);
+});
+console.log(cWords);
