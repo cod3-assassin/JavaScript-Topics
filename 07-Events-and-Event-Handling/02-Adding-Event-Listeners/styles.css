@@ -1,0 +1,26 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+#taskList li {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+}
+
+#taskList li:hover {
+    background-color: #e9e9e9;
+}
+
+#taskInput {
+    padding: 10px;
+    width: 300px;
+    margin-right: 5px;
+}
+
+#addTaskBtn {
+    padding: 10px 20px;
+    cursor: pointer;
+}
