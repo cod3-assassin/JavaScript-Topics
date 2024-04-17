@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Task List with Event Propagation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      #taskList li {
+        margin-bottom: 10px;
+        padding: 5px;
+        background-color: #f0f0f0;
+      }
+      #taskList .completed {
+        text-decoration: line-through;
+      }
+      button {
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="taskList"></ul>
+    <div>
+      <input id="taskInput" type="text" placeholder="Enter a new task" />
+      <button id="addTaskBtn">Add Task</button>
+    </div>
+
+    <script>
+      document
+        .getElementById("addTaskBtn")
+        .addEventListener("click", function () {
+          const input = document.getElementById("taskInput");
+          const newTaskText = input.value.trim();
+          if (newTaskText !== "") {
+            addTask(newTaskText);
+            input.value = ""; // Clear input after adding
+          }
+        });
+
+      function addTask(text) {
+        const list = document.getElementById("taskList");
+        const newTask = document.createElement("li");
+
+        // Create nested structure
+        const contentDiv = document.createElement("div");
+        contentDiv.textContent = text;
+        newTask.appendChild(contentDiv);
+
+        // Propagation toggle button
+        const toggleBtn = document.createElement("button");
+        toggleBtn.textContent = "Toggle Propagation";
+        newTask.appendChild(toggleBtn);
+
+        // Set initial propagation status
+        let propagate = true;
+
+        // Add event listeners to different phases
+        contentDiv.addEventListener(
+          "click",
+          function (event) {
+            console.log("Task Content (BUBBLING)");
+            if (!propagate) {
+              event.stopPropagation();
+            }
+          },
+          false
+        );
+
+        toggleBtn.addEventListener(
+          "click",
+          function (event) {
+            // Prevent click on button from triggering content's event listeners
+            event.stopPropagation();
+            propagate = !propagate;
+            this.textContent = propagate
+              ? "Toggle Propagation"
+              : "Stop Propagation";
+          },
+          false
+        );
+
+        list.appendChild(newTask);
+        saveTasks();
+      }
+
+      function saveTasks() {
+        const tasks = [];
+        document.querySelectorAll("#taskList li div").forEach((task) => {
+          tasks.push({
+            text: task.textContent,
+            completed: task.parentNode.classList.contains("completed"),
+          });
+        });
+        window.localStorage.setItem("tasks", JSON.stringify(tasks));
+      }
+
+      function loadTasks() {
+        const tasks = JSON.parse(window.localStorage.getItem("tasks"));
+        if (tasks) {
+          tasks.forEach((task) => {
+            addTask(task.text);
+            if (task.completed) {
+              document
+                .getElementById("taskList")
+                .lastChild.classList.add("completed");
+            }
+          });
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        loadTasks();
+      });
+    </script>
+  </body>
+</html>

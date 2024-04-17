@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Object Example</title>
+  </head>
+  <body>
+    <button id="myButton">Click Me!</button>
+
+    <script>
+      document
+        .getElementById("myButton")
+        .addEventListener("click", function (event) {
+          // Log details about the event
+          console.log("Event Type:", event.type); // Logs 'click'
+          console.log("Target:", event.target); // Logs the button element
+          console.log("Current Target:", event.currentTarget); // Also logs the button element
+          console.log("Event Phase:", event.eventPhase); // Logs 2 for AT_TARGET during the event's target phase
+
+          // Prevent the default action of the event
+          event.preventDefault();
+        });
+    </script>
+  </body>
+</html>
